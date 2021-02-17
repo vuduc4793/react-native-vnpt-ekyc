@@ -1,19 +1,21 @@
 import * as React from 'react';
 
-import { StyleSheet, View, Text } from 'react-native';
-import VnptEkyc from 'react-native-vnpt-ekyc';
+import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
+import VnptEkyc from "react-native-vnpt-ekyc"
 
 
 export default function App() {
   const [result, setResult] = React.useState<number | undefined>();
+  console.log("VnptEkyc", VnptEkyc)
 
-  React.useEffect(() => {
-    VnptEkyc.multiply(3, 7).then(setResult);
-  }, []);
-
+  const handleEkyc = () => {
+    VnptEkyc.ekyc((result) => console.log("result", result))
+  }
   return (
     <View style={styles.container}>
+      <TouchableOpacity  onPress={handleEkyc}>
       <Text>Result: {result}</Text>
+    </TouchableOpacity>
     </View>
   );
 }

@@ -125,6 +125,12 @@ def kotlin_version = getExtOrDefault('kotlinVersion')
 
 dependencies {
   // noinspection GradleDynamicVersion
+  implementation fileTree(include: ['*.jar', '*.aar'], dir: 'libs')
   api 'com.facebook.react:react-native:+'
   implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+  implementation files('libs/ekyc_sdk.aar')
+  implementation 'com.android.support:appcompat-v7:28.0.0'
+  implementation 'com.android.support:design:28.0.0'
+  implementation 'com.android.support:exifinterface:28.0.0'
+  implementation 'com.google.code.gson:gson:2.8.2'
 }

@@ -1,7 +1,7 @@
 import { NativeModules } from 'react-native';
 
 type VnptEkycType = {
-  multiply(a: number, b: number): Promise<number>;
+  ekyc(): Promise<any>;
 };
 
 const { VnptEkyc } = NativeModules;
